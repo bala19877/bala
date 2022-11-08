@@ -1,0 +1,50 @@
+package com.krishna;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Mytratask {
+	public static WebDriver driver; 
+	public static int totalNumberofProducts;
+	
+	
+		 public static void main(String[] args) throws InterruptedException, IOException{
+		    System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\eclipse-workspace\\selenium\\driver\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
+			driver.get("https://www.myntra.com/");
+			driver.manage().window().maximize();  
+			Actions ac=new Actions(driver);
+			WebElement kids = driver.findElement(By.xpath("//a[@data-group='kids']"));
+			ac.contextClick(kids).build().perform();
+			WebElement logout = driver.findElement(By.xpath("//a[@data-reactid='345']"));
+			logout.click();
+		 }
+		 
+			public static void productCount() {
+			List<WebElement>allProducts=driver.findElements(By.xpath("//li[@class='product-base']"));
+			totalNumberofProducts=allProducts.size();
+			System.out.println("Total count of product is :"+totalNumberofProducts);
+			for (WebElement product : allProducts) {
+//				System.out.println("Total count of product is :"+totalNumberofProducts);
+			}
+			}
+//			public static void minimumPriceOfallProducts()  {
+//				List<WebElement>allProducts=(List<WebElement>) driver.findElement(By.xpath("//li[@class='product-base']//descendant:span[@class='product-discountedPrice']//preceding sibiling:h3[@class='product-brand'"));
+//			totalNumberofProducts=allProducts.size();
+//			System.out.println("Total count of product is :"+totalNumberofProducts);
+				
+			}
+			
+			
+
+
+			
+			
+		

@@ -1,0 +1,22 @@
+package com.krishna;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Autopractice {
+	public static void main(String[] args) throws InterruptedException, IOException {
+	    System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\eclipse-workspace\\selenium\\driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://automationpractice.com/index.php//");
+		driver.manage().window().maximize();
+		WebElement women = driver.findElement(By.xpath("//a[text()='Women']"));
+//		women.click();
+		WebElement Casual = driver.findElement(By.xpath("(//a[@title='Casual Dresses'])[1]"));
+		Casual.click();
+	}
+
+}

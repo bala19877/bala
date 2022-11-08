@@ -1,0 +1,24 @@
+package com.krishna;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class HotelReservation {
+	public static void main(String[] args) {
+	    System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\eclipse-workspace\\selenium\\driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://adactinhotelapp.com//");
+		driver.manage().window().maximize();
+		WebElement user = driver.findElement(By.name("username"));
+		user.sendKeys("balamadhu");
+		WebElement pass = driver.findElement(By.name("password"));
+		pass.sendKeys("bala1987");
+		WebElement log = driver.findElement(By.id("login"));
+	    log.click();
+		
+	}
+	
+
+}

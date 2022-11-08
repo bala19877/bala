@@ -1,0 +1,33 @@
+package com.krishna;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class mytracheck {
+	WebDriver driver = new ChromeDriver();
+	public static void BrowserLunch()
+	 {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\User\\eclipse-workspace"
+	    		+ "\\selenium\\driverfolder\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.myntra.com/kids?f=Categories%3ATshirts%3A%3AGender%3Aboys%2Cboys%20girls&plaEnabled=false");
+		driver.manage().window().maximize();
+		WebElement tshort = driver.findElement(By.xpath("//a[@class='desktop-categoryLink'][1]"));
+		tshort.click();
+}
+     private static void productsCount() {
+    	 List<WebElement> list = driver.findElements(By.xpath("//div[@class='product-productMetaInfo']"));
+    	 int i = list.size();
+    	 System.out.println(i);
+}
+     public static void main(String[] args) throws InterruptedException, IOException
+     {
+    	 BrowserLunch();
+    	 productsCount();
+     }
+}

@@ -1,0 +1,20 @@
+Feature: adactin hotal boooking
+
+Scenario: user login adactin  
+      Given user adactin url lunch in web application
+      When user enter the username
+      And user enter the passward
+      Then user click the login 
+      
+ Scenario: search hotel search hotel page
+       When  user Select Location from drop down list in location field
+       And   user Select hotel from drop down list in location field
+       And   user Select room type from drop down list in location field
+       And   user Select number of Rooms from drop down list in location field
+       And   user Enter check in date in location field
+       And   user Enter check out date in location field
+       And   user Select number of adults from drop down list in location field
+       And   user Select number of children from drop down list in location field
+       Then  User Click The Search Button and navigate to select hotel page
+       
+Scenario:   select hotel page      
